@@ -1,0 +1,28 @@
+ quikfold: from mfold version 3.2
+
+ Input sequence file name  (q to quit)  
+  
+ Enter asymmetric interior loop of size 3 energy file name
+ (default asint1x2.dat)
+ Enter asymmetric interior loop of size 5 energy file name
+ (default asint2x3.dat)
+ Enter dangle energy file name (default dangle.dat)
+ Enter loop energy file name (default loop.dat)
+ Enter misc. loop energy file name (default miscloop.dat)
+ Enter symmetric interior loop of size 2 energy file
+  name (default sint2.dat)
+ Enter symmetric interior loop of size 4 energy file
+  name (default sint4.dat)
+ Enter symmetric interior loop of size 6 energy file
+  name (default sint6.dat)
+ Enter stack energy file name (default stack.dat)
+ Enter tetraloop energy file name (default tloop.dat)
+ Enter triloop energy file name (default triloop.dat)
+ Enter tstackh energy file name (default tstackh.dat)
+ Enter tstacki energy file name (default tstacki.dat)
+
+     1. dG =      1.5   1                                                 
+
+                 * End of file encountered * 
+
+     2. dG =     -3.2   2                                                 
