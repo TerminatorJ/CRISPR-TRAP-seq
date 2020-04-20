@@ -28,7 +28,7 @@ note: you should put this file into the working direction under $ABE_CBE_Cas9_tr
 your direction order should like this:
 
 ```bash
-ABE_CBE_Cas9_trap_ML
+CRISPR TRAP-seq
 ...asint1x2.dat
 ...loop.dat
 ...sint2.dat
