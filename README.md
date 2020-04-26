@@ -6,24 +6,29 @@ This is a ML learning model to predict the gRNA efficiency  of trap-based editin
 # DeltaG calculation (environmental preparation)
 
 To get the binary file of mfold, please download the package from the website: http://unafold.rna.albany.edu/?q=mfold/download-mfold
+
 ```bash
 #untar the tar.gz file
 tar -zxvf mfold-3.6.tar.gz
-#install mfold
+```
+# install mfold
+
+```bash
 ./configure prefix="$dir_you_want_to_see_the_bin"
 make
 make install
 #then you can see the bin file in the dir you set in the $prefix
 ```
-Exporting the "quikfold" into your PATH (note:quikfold can help you to calculate the deltaG of multiple sequences at the same time!!! we strongly suggest the user exploit this binary file)
+Exporting the "quikfold" into your PATH (note:quikfold can help you to calculate the deltaG of multiple sequences at the same time!!! )
+
+## Adding the following code into your ~/.bashrc
 
 ```bash
-##Adding the following code into your ~/.bashrc
 export PATH=$your_bin_dir_of_mfold:$PATH
 ```
 
 Before calculating the deltaG, you should prepare a fasta file, which contain 30mer(4 bp+23 bp+3 bp)sequence
-note: you should put this file into the working direction under $ABE_CBE_Cas9_trap_ML
+note: you should put this file into the working direction under $CRISPR TRAP-seq
 
 your direction order should like this:
 
@@ -46,7 +51,7 @@ CRISPR TRAP-seq
 ...README.md
 ...test.fasta
 ```
-# Prediction your own sequence
+# Prediction of your own sequence
 Then you can construct the imput matrix for prediction
 
 ```python
@@ -59,5 +64,5 @@ output=prediction.predict(input_matrix,typ="ABE",full_length=True)
 # Output
 
 ```bash
-this output should between 0 and 1, higher value means higher efficiency, and can be more useful in your future application
+this output should between 0 and 1, higher value means higher efficiency, and can be more useful in your future applications
 ```
