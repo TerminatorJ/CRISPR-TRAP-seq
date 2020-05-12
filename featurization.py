@@ -272,11 +272,11 @@ def series_to_df(Series):
     return df
 
 
-def fasta_2_df(fasta_file):
-    items=fasta_file.split(">")[1:]
+def fasta_2_df(fasta_str):
+    items=fasta_str.split(">")[1:]
     seqs=[]
+    
     for item in items:
-        item=item.strip()
         seq=item.split("\n")[1]
         seqs.append(seq)
     seq_df=pd.DataFrame(seqs,columns=["30mer"]) 
@@ -300,10 +300,8 @@ def list_2_fasta(list_type):
 def get_deltaG(fasta):
     deltaG_lst=cal_deltaG(fasta)    
     return deltaG_list
-def save_20mer_fasta(fasta_name_30mer):
-    with open(fasta_name_30mer,"r") as f2:#this input is a name of fasta file contain sequences
-        data=f2.read()
-    items=data.split(">")[1:]
+def save_20mer_fasta(fasta_str):
+    items=fasta_str.split(">")[1:]
     seqs=[]
     new_str=""
     for item in items:
@@ -317,11 +315,9 @@ def save_20mer_fasta(fasta_name_30mer):
         f3.write(new_str)
     
 
-def get_input(fasta_name_30mer):
-    with open(fasta_name_30mer,"r") as f1:#this input is a name of fasta file contain sequences
-        data=f1.read()
-    data_df=fasta_2_df(data)
-    save_20mer_fasta(fasta_name_30mer)
+def get_input(fasta_str):
+    data_df=fasta_2_df(fasta_str)
+    save_20mer_fasta(fasta_str)
     this_input=concat_all_need_feat_second(data_df,"seq_20mer.fasta")#input_ should be aranged in the file of cal_deltaG
     return this_input
 
