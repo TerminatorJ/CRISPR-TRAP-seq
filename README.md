@@ -2,7 +2,8 @@
 This is a ML learning model to predict the gRNA efficiency  of trap-based editing system. eg.ABE, CBE, Cas9
 
 # Environment: Linux
-# Packages requirement: python>=3.5,biopython,pandas,sklearn,os,sys,numpy,pickle,itertools,scipy,matplotlib
+# Packages requirement: 
+python>=3.5,biopython,pandas,sklearn,os,sys,numpy,pickle,itertools,scipy,matplotlib
 # DeltaG calculation (environmental preparation)
 
 To get the binary file of mfold, please download the package from the website: http://unafold.rna.albany.edu/?q=mfold/download-mfold
