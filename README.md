@@ -2,7 +2,7 @@
 This is a ML learning model to predict the gRNA efficiency  of trap-based editing system. eg.ABE, CBE, Cas9
 
 # Environment: Linux
-
+# Packages requirement: python>=3.5,biopython,pandas,sklearn,os,sys,numpy,pickle,itertools,scipy,matplotlib
 # DeltaG calculation (environmental preparation)
 
 To get the binary file of mfold, please download the package from the website: http://unafold.rna.albany.edu/?q=mfold/download-mfold
@@ -55,14 +55,15 @@ CRISPR TRAP-seq
 Then you can construct the imput matrix for prediction
 
 ```python
-import featurization
 import prediction
-input_matrix=featurization.get_input("test.fasta")#You can replace $test.fasta by your own fasta file with 30mer sequence meed the standard of 30mer(4 bp+23 bp+3 bp) you want to predict.
-output=prediction.predict(input_matrix,typ="ABE",full_length=True)
+prediction.get_score("test.fasta","Cas9",full_length=True,site=None)#You can replace $test.fasta by your own fasta file with 30mer sequence meed the standard of 30mer(4 bp+23 bp+3 bp) you want to predict.
+##Then the result file named "type_GNL_result.csv" will show in the same direction of prediction.py file
 ##If you want the models of specific sites among each editing system please send the email to luoyonglun@genomics.cn.
 ```
 # Output
-
-```bash
-this output should between 0 and 1, higher value means higher efficiency, and can be more useful in your future applications
+e.g.
+,30mer,GNL-Scorer
+0,AGAAGACAACCTATTATCAAAAAAAGGAAA,-0.0032399141226204797
+1,GTGCCAGGGCCAAGGTAGGCAAAAAGGAAA,0.0323898160974605
+#GNL-ScorerV2 outputs will between 0 and 1, higher value means higher efficiency, which means this gRNA can be more useful in your future applications
 ```
